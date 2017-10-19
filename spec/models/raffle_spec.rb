@@ -11,6 +11,8 @@ require 'rails_helper'
 
 RSpec.describe Raffle, type: :model do
   describe '::create_with_tickets' do
+
+    # This is an example spec for the already implemented
     it 'is successfully created with tickets' do
       raffle = Raffle.create_with_tickets(10)
       expect(raffle).to be_persisted
@@ -18,9 +20,14 @@ RSpec.describe Raffle, type: :model do
     end
   end
 
-  describe '#draw' do
-    it 'can draw a winner'
-    it 'will not draw the same winner twice'
+  describe '#draw_winner' do
+
+    # TODO: Implement these specs for the draw method
+    it 'can draw and store a ticket'
+    it 'will not draw the same ticket twice'
+
+    # Bonus spec: This tests the #draw method's ability to pick
+    # a winner at random from a very large table of tickets.
     it 'can draw a winner from a large table' do
       pending '#draw is not implemented'
       raffle = Raffle.create

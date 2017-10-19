@@ -9,7 +9,7 @@
 
 class Raffle < ApplicationRecord
   has_many :tickets
-  has_many :draws
+  has_many :winners
 
   def self.create_with_tickets(count = 100)
     Raffle.create.tap do |raffle|
@@ -17,7 +17,8 @@ class Raffle < ApplicationRecord
     end
   end
 
-  def draw
+  # The draw method should return a ticket and remember that it was drawn
+  def draw_winner
     # ...
   end
 end

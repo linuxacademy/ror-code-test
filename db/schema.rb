@@ -10,16 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171010174741) do
-
-  create_table "draws", force: :cascade do |t|
-    t.integer "raffle_id"
-    t.integer "ticket_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["raffle_id"], name: "index_draws_on_raffle_id"
-    t.index ["ticket_id"], name: "index_draws_on_ticket_id"
-  end
+ActiveRecord::Schema.define(version: 20171019205910) do
 
   create_table "raffles", force: :cascade do |t|
     t.datetime "created_at", null: false
@@ -31,6 +22,15 @@ ActiveRecord::Schema.define(version: 20171010174741) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["raffle_id"], name: "index_tickets_on_raffle_id"
+  end
+
+  create_table "winners", force: :cascade do |t|
+    t.integer "raffle_id"
+    t.integer "ticket_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["raffle_id"], name: "index_winners_on_raffle_id"
+    t.index ["ticket_id"], name: "index_winners_on_ticket_id"
   end
 
 end

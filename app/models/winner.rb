@@ -1,6 +1,6 @@
 # == Schema Information
 #
-# Table name: draws
+# Table name: winners
 #
 #  id         :integer          not null, primary key
 #  raffle_id  :integer
@@ -9,7 +9,7 @@
 #  updated_at :datetime         not null
 #
 
-class Draw < ApplicationRecord
+class Winner < ApplicationRecord
   belongs_to :raffle
   belongs_to :ticket
 end
